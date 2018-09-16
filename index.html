@@ -1,52 +1,71 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://getbootstrap.com/docs/4.0/examples/sign-in/ -->
+<html lang="en">
+
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Nominasi BIO ABC 2014</title>
+
+  <link href="index.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="signin.css" rel="stylesheet">
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="jquery.serialize-object.min.js"></script>
+  
 </head>
-<form id="test-form">
 
-  <div>
-    <label>NIM</label>
-    <input type="text" name="nim" placeholder="Field 1" />
-  </div>
-  <div>
-    <label>Nama</label>
-    <input id="tags" type="text" name="nama" placeholder="Field 1" />
-  </div>
+<body class="text-center" tcap-name="main">
+  <form class="form-signin" id="test-form">
 
-  <div>
-    <label>Tergateng</label>
-    <input type="radio" name="nominasi" value="Tergateng" />
-    <br>
-    <label>Tercantik</label>
-    <input type="radio" name="nominasi" value="Tercantik" />
-  </div>
+    <h1 class="mb-3 font-weight-normal">Nominasi Biologi ABC 2014</h1>
+    <input name="nim" type="text" class="form-control m-2" placeholder="Your NIM" required="" autofocus="">
+    <input id="names" name="nama" type="text" class="form-control m-2" placeholder="Nominee" required="" autofocus="">
 
-  <div>
-    <button type="submit" id="submit-form">Submit</button>
-  </div>
+    <div class="px-5">
+      <div class="custom-control custom-radio">
+        <input type="radio" id="1" name="nominasi" class="custom-control-input" value="#terdrama">
+        <label class="custom-control-label" for="1">#terdrama</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="2" name="nominasi" class="custom-control-input" value="#terangkanlah">
+        <label class="custom-control-label" for="2">#terangkanlah</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="3" name="nominasi" class="custom-control-input" value="#teryoayo">
+        <label class="custom-control-label" for="3">#teryoayo</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="4" name="nominasi" class="custom-control-input" value="#terhimpit">
+        <label class="custom-control-label" for="4">#terhimpit</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="5" name="nominasi" class="custom-control-input" value="#termacet">
+        <label class="custom-control-label" for="5">#termacet</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="6" name="nominasi" class="custom-control-input" value="#terompet">
+        <label class="custom-control-label" for="6">#terompet</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="7" name="nominasi" class="custom-control-input" value="#termutakhir">
+        <label class="custom-control-label" for="7">#termutakhir</label>
+      </div>
 
-</form>
-<script>
-  var availableTags = ["ActionScript", "AppleScript", "Asp"];
-  var availableTagsCode = ["1", "2", "3"];
-  $("#tags").autocomplete({
-    source: availableTags,
-    select: function (event, ui) {
-      var index = availableTags.indexOf(ui.item.value);
-      $("#tags_code").val(availableTagsCode[index]);
-    }
-  });
+    </div>
 
-  var $form = $('form#test-form'),
-    url = 'https://script.google.com/macros/s/AKfycbx2TP_w_pAgrkTUO5ax8eZNZyUFXaX2azTYMKv7bRBNSd_kSlOM/exec'
+    <button id="submit-form" class="btn btn-lg btn-primary btn-block m-2" type="submit" href="done.html">Nominate!</button>
+    <p class="mt-5 mb-3 text-muted"></p>
+  </form>
 
-  $('#submit-form').on('click', function (e) {
-    e.preventDefault();
-    var jqxhr = $.ajax({
-      url: url,
-      method: "GET",
-      dataType: "json",
-      data: $form.serializeObject()
-    })
-  })
-</script>
+  <script src="index.js"></script>
+</body>
+
+</html>
