@@ -14,10 +14,11 @@ $('#submit-form').on('click', function (e) {
   e.preventDefault();
   var jqxhr = $.ajax({
     url: url,
-    method: "POST",
+    method: "GET",
     dataType: "json",
     data: $form.serializeObject(),
-	
+	success:function(data, textStatus, jqXHR) {alert("success");},
+    error: function(jqXHR, textStatus, errorThrown) {alert("failure");}
   })
   location.href = 'done.html'
 });
