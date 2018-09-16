@@ -1,0 +1,52 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jquery.serialize-object.min.js"></script>
+</head>
+<form id="test-form">
+
+  <div>
+    <label>NIM</label>
+    <input type="text" name="nim" placeholder="Field 1" />
+  </div>
+  <div>
+    <label>Nama</label>
+    <input id="tags" type="text" name="nama" placeholder="Field 1" />
+  </div>
+
+  <div>
+    <label>Tergateng</label>
+    <input type="radio" name="nominasi" value="Tergateng" />
+    <br>
+    <label>Tercantik</label>
+    <input type="radio" name="nominasi" value="Tercantik" />
+  </div>
+
+  <div>
+    <button type="submit" id="submit-form">Submit</button>
+  </div>
+
+</form>
+<script>
+  var availableTags = ["ActionScript", "AppleScript", "Asp"];
+  var availableTagsCode = ["1", "2", "3"];
+  $("#tags").autocomplete({
+    source: availableTags,
+    select: function (event, ui) {
+      var index = availableTags.indexOf(ui.item.value);
+      $("#tags_code").val(availableTagsCode[index]);
+    }
+  });
+
+  var $form = $('form#test-form'),
+    url = 'https://script.google.com/macros/s/AKfycbx2TP_w_pAgrkTUO5ax8eZNZyUFXaX2azTYMKv7bRBNSd_kSlOM/exec'
+
+  $('#submit-form').on('click', function (e) {
+    e.preventDefault();
+    var jqxhr = $.ajax({
+      url: url,
+      method: "GET",
+      dataType: "json",
+      data: $form.serializeObject()
+    })
+  })
+</script>
