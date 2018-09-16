@@ -10,6 +10,13 @@ $(function () {
 var $form = $('form#test-form'),
   url = 'https://script.google.com/macros/s/AKfycbx2TP_w_pAgrkTUO5ax8eZNZyUFXaX2azTYMKv7bRBNSd_kSlOM/exec'
 
+
+
+jQuery.ajaxPrefilter(function (options) {
+  if (options.crossDomain && jQuery.support.cors) {
+    options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+  }
+});
 $('#submit-form').on('click', function (e) {
   e.preventDefault();
   var jqxhr = $.ajax({
@@ -17,8 +24,11 @@ $('#submit-form').on('click', function (e) {
     method: "GET",
     dataType: "json",
     data: $form.serializeObject(),
-	success:function(data, textStatus, jqXHR) {alert("success");},
-    error: function(jqXHR, textStatus, errorThrown) {alert("failure");}
+    success: function () {
+      document.location.href = 'done.html';
+    },
+    error: function () {
+      alert('error');
+    }
   })
-  location.href = 'done.html'
-});
+})
