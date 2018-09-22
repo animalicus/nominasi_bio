@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  
+
   <link rel="icon" href="logo.png" style="width: 3px">
   <title>Nominasi BIO ABC 2014</title>
 
@@ -20,52 +20,43 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="jquery.serialize-object.min.js"></script>
-  
+
 </head>
+<div id="loader">
+  <div class="sk-fading-circle">
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+    <div class="sk-circle5 sk-circle"></div>
+    <div class="sk-circle6 sk-circle"></div>
+    <div class="sk-circle7 sk-circle"></div>
+    <div class="sk-circle8 sk-circle"></div>
+    <div class="sk-circle9 sk-circle"></div>
+    <div class="sk-circle10 sk-circle"></div>
+    <div class="sk-circle11 sk-circle"></div>
+    <div class="sk-circle12 sk-circle"></div>
+  </div>
+</div>
 
 <body class="text-center" tcap-name="main">
-  <form class="form-signin" id="test-form">
-    <img src="logo.png" style="width: 150px">
-    <h1 class="mb-3 font-weight-normal">Nominasi Biologi ABC 2014</h1>
-    <input name="nim" type="text" class="form-control m-2" placeholder="Your NIM" required="" autofocus="">
-    <input id="names" name="nama" type="text" class="form-control m-2" placeholder="Nominee" required="" autofocus="">
+  <div id="blur" class="">
+    <form class="form-signin" id="test-form">
+      <img src="logo.png" style="width: 150px">
+      <h1 class="mb-3 font-weight-normal">Nominasi Biologi ABC 2014</h1>
+      <input name="nim" type="text" class="form-control m-2" placeholder="Your NIM" required="" autofocus="">
+      <input name="terdrama" type="text" class="form-control m-2 names" placeholder="#terdrama" required="" autofocus="">
+      <input name="terangkanlah" type="text" class="form-control m-2 names" placeholder="#terangkanlah" required="" autofocus="">
+      <input name="teryoayo" type="text" class="form-control m-2 names" placeholder="#teryoayo" required="" autofocus="">
+      <input name="terhimpit" type="text" class="form-control m-2 names" placeholder="#terhimpit" required="" autofocus="">
+      <input name="termacet" type="text" class="form-control m-2 names" placeholder="#termacet" required="" autofocus="">
+      <input name="terompet" type="text" class="form-control m-2 names" placeholder="#terompet" required="" autofocus="">
+      <input name="termutakhir" type="text" class="form-control m-2 names" placeholder="#termutakhir" required="" autofocus="">
 
-    <div class="px-5">
-      <div class="custom-control custom-radio">
-        <input type="radio" id="1" name="nominasi" class="custom-control-input" value="#terdrama">
-        <label class="custom-control-label" for="1">#terdrama</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="2" name="nominasi" class="custom-control-input" value="#terangkanlah">
-        <label class="custom-control-label" for="2">#terangkanlah</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="3" name="nominasi" class="custom-control-input" value="#teryoayo">
-        <label class="custom-control-label" for="3">#teryoayo</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="4" name="nominasi" class="custom-control-input" value="#terhimpit">
-        <label class="custom-control-label" for="4">#terhimpit</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="5" name="nominasi" class="custom-control-input" value="#termacet">
-        <label class="custom-control-label" for="5">#termacet</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="6" name="nominasi" class="custom-control-input" value="#terompet">
-        <label class="custom-control-label" for="6">#terompet</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="7" name="nominasi" class="custom-control-input" value="#termutakhir">
-        <label class="custom-control-label" for="7">#termutakhir</label>
-      </div>
+      <button id="submit-form" class="btn btn-lg btn-primary btn-block m-2 my-5" type="submit" href="done.html">Nominate!</button>
 
-    </div>
-
-    <button id="submit-form" class="btn btn-lg btn-primary btn-block m-2" type="submit" href="done.html">Nominate!</button>
-    <p class="mt-5 mb-3 text-muted"></p>
-  </form>
-
+    </form>
+  </div>
   <script src="index.js"></script>
 </body>
 
